@@ -12,10 +12,10 @@ imap { {}<ESC>i<CR><ESC>V<O
 imap ( ()<ESC>i
 
 "python print函数自动补全
-imap print print(''<ESC>i
+"imap print print(''<ESC>i
 
 "python type函数自动补全
-imap type type(
+"imap type type(
 
 "=注释一行 -取消一行注释
 map = I/* <ESC>A */<ESC>
@@ -40,3 +40,18 @@ autocmd BufNewFile *.py call SetNote()
 		call append(line("."),"#Date:".strftime("%Y年%m月%d日"))
 	endfunc
 	autocmd BufNewFile * normal G
+
+set nocompatible " be iMproved, required
+filetype off " required
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end() " required
+filetype plugin indent on " required
